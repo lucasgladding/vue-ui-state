@@ -1,6 +1,6 @@
 import {computed} from 'vue';
 import {useErrorsStore} from '@/store/pinia/errors';
-import {ErrorState, Listener, MessageType} from './ErrorState';
+import {ErrorState, MessageType} from './ErrorState';
 
 export const useErrorState: () => ErrorState = () => {
     const store = useErrorsStore()
@@ -8,7 +8,7 @@ export const useErrorState: () => ErrorState = () => {
     const messages = computed(() => store.messages)
 
     const success = async (text: string) => {
-        await store.broadcast({
+        await store.append({
             id: Math.random().toString(),
             text,
             type: MessageType.Success,
@@ -16,7 +16,7 @@ export const useErrorState: () => ErrorState = () => {
     }
 
     const error = async (text: string) => {
-        await store.broadcast({
+        await store.append({
             id: Math.random().toString(),
             text,
             type: MessageType.Error,
@@ -27,15 +27,10 @@ export const useErrorState: () => ErrorState = () => {
         await store.clear()
     }
 
-    const listen = async (listener: Listener) => {
-        await store.listen(listener)
-    }
-
     return {
         messages,
         success,
         error,
         clear,
-        listen,
     }
 }
