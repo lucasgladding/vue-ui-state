@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import {useErrorState} from '@/composables/useErrorState2';
+import {useErrorState} from '@/composables/useErrorState';
 
 const {success, error} = useErrorState()
 </script>

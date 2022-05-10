@@ -1,14 +1,14 @@
 import {computed} from 'vue';
-import {useStore} from 'vuex';
-import {ErrorState, MessageType} from '@/composables/ErrorState';
+import {useErrorsStore} from '@/store/pinia/errors';
+import {ErrorState, MessageType} from './ErrorState';
 
 export const useErrorState: () => ErrorState = () => {
-    const store = useStore()
+    const store = useErrorsStore()
 
-    const messages = computed(() => store.state.errors.messages)
+    const messages = computed(() => store.messages)
 
     const success = async (text: string) => {
-        await store.dispatch('append', {
+        await store.append({
             id: Math.random().toString(),
             text,
             type: MessageType.Success,
@@ -16,7 +16,7 @@ export const useErrorState: () => ErrorState = () => {
     }
 
     const error = async (text: string) => {
-        await store.dispatch('append', {
+        await store.append({
             id: Math.random().toString(),
             text,
             type: MessageType.Error,
@@ -24,7 +24,7 @@ export const useErrorState: () => ErrorState = () => {
     }
 
     const clear = async () => {
-        await store.dispatch('clear')
+        await store.clear()
     }
 
     return {

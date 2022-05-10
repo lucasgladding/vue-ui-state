@@ -1,7 +1,6 @@
 import {createApp} from 'vue';
-import {useErrorState} from '@/composables/useErrorState2';
-
 import {pinia, store} from '@/store'
+import {useErrorState} from './vuex';
 
 function withSetup<T>(composable: () => T): [T, any] {
     let result: T

@@ -1,5 +1,5 @@
 import { Module } from 'vuex'
-import {Message} from '@/composables/ErrorState';
+import {Message} from '@/composables/useErrorState/ErrorState'
 
 interface State {
     messages: Message[],

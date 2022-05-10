@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import {useErrorState} from '@/composables/useErrorState2';
+import {useErrorState} from '@/composables/useErrorState';
 
 const {messages} = useErrorState()
 </script>
