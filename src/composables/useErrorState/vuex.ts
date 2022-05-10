@@ -1,6 +1,6 @@
 import {computed} from 'vue';
 import {useStore} from 'vuex';
-import {ErrorState, MessageType} from './ErrorState';
+import {ErrorState, Listener, MessageType} from './ErrorState';
 
 export const useErrorState: () => ErrorState = () => {
     const store = useStore()
@@ -8,7 +8,7 @@ export const useErrorState: () => ErrorState = () => {
     const messages = computed(() => store.state.errors.messages)
 
     const success = async (text: string) => {
-        await store.dispatch('append', {
+        await store.dispatch('broadcast', {
             id: Math.random().toString(),
             text,
             type: MessageType.Success,
@@ -16,7 +16,7 @@ export const useErrorState: () => ErrorState = () => {
     }
 
     const error = async (text: string) => {
-        await store.dispatch('append', {
+        await store.dispatch('broadcast', {
             id: Math.random().toString(),
             text,
             type: MessageType.Error,
@@ -27,10 +27,15 @@ export const useErrorState: () => ErrorState = () => {
         await store.dispatch('clear')
     }
 
+    const listen = async (listener: Listener) => {
+        await store.dispatch('listen', listener)
+    }
+
     return {
         messages,
         success,
         error,
         clear,
+        listen,
     }
 }

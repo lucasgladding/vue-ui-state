@@ -1,13 +1,15 @@
 import { Module } from 'vuex'
-import {Message} from '@/composables/useErrorState/ErrorState'
+import {Listener, Message} from '@/composables/useErrorState/ErrorState'
 
 interface State {
+    listeners: Listener[],
     messages: Message[],
 }
 
 export const errors: Module<State, any> = {
     state: {
-        messages: []
+        listeners: [],
+        messages: [],
     },
     mutations: {
         append(state: State, message: Message) {
@@ -15,14 +17,23 @@ export const errors: Module<State, any> = {
         },
         clear(state: State) {
             state.messages = []
-        }
+        },
+        listen(state: State, listener: Listener) {
+            state.listeners = [...state.listeners, listener]
+        },
     },
     actions: {
-        append({commit}, message: Message) {
+        broadcast({commit, state}, message: Message) {
             commit('append', message)
+            state.listeners.forEach((listener) => {
+                listener(message)
+            })
         },
         clear({commit}) {
             commit('clear')
-        }
+        },
+        listen({commit}, listener: Listener) {
+            commit('listen', listener)
+        },
     }
 }

@@ -44,4 +44,12 @@ describe.each(cases)('useErrorState using %s store', (name, composable) => {
         await result.error(text)
         expect(result.messages.value).toHaveLength(1)
     })
+
+    it('can listen for messages', async () => {
+        const target = jest.fn()
+        const text = 'message text'
+        await result.listen(target)
+        await result.success(text)
+        expect(target).toHaveBeenCalled()
+    })
 })
