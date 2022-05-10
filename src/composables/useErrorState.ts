@@ -2,9 +2,7 @@ import {computed} from 'vue';
 import {useStore} from 'vuex';
 import {ErrorState, MessageType} from '@/composables/ErrorState';
 
-type UseErrorState = () => ErrorState
-
-export const useErrorState: UseErrorState = () => {
+export const useErrorState: () => ErrorState = () => {
     const store = useStore()
 
     const messages = computed(() => store.state.ui.messages)
