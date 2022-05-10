@@ -5,7 +5,7 @@ import {ErrorState, MessageType} from '@/composables/ErrorState';
 export const useErrorState: () => ErrorState = () => {
     const store = useStore()
 
-    const messages = computed(() => store.state.ui.messages)
+    const messages = computed(() => store.state.errors.messages)
 
     const success = async (text: string) => {
         await store.dispatch('append', {

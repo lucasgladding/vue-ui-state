@@ -1,8 +1,11 @@
+import {createPinia} from 'pinia';
 import { createStore } from 'vuex'
-import {ui} from './ui/index'
+import {errors} from './vuex/errors'
 
-export default createStore({
+export const pinia = createPinia()
+
+export const store = createStore({
   modules: {
-    ui,
+    errors,
   }
 })

@@ -1,4 +1,4 @@
-import {ComputedRef} from 'vue';
+import {Ref} from 'vue';
 
 export enum MessageType {
     Success,
@@ -12,7 +12,7 @@ export type Message = {
 }
 
 export interface ErrorState {
-    messages: ComputedRef<Message[]>
+    messages: Ref<Message[]>
     success: (text: string) => Promise<void>
     error: (text: string) => Promise<void>
     clear: () => Promise<void>

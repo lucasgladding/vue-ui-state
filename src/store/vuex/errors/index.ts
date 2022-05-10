@@ -5,7 +5,7 @@ interface State {
     messages: Message[],
 }
 
-export const ui: Module<State, any> = {
+export const errors: Module<State, any> = {
     state: {
         messages: []
     },

@@ -1,5 +1,5 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
-import store from './store'
+import {pinia, store} from '@/store';
 
-createApp(App).use(store).mount('#app')
+createApp(App).use(pinia).use(store).mount('#app')

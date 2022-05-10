@@ -1,7 +1,7 @@
 import {createApp} from 'vue';
-import {useErrorState} from '@/composables/useErrorState';
+import {useErrorState} from '@/composables/useErrorState2';
 
-import store from '@/store'
+import {pinia, store} from '@/store'
 
 function withSetup<T>(composable: () => T): [T, any] {
     let result: T
@@ -11,7 +11,7 @@ function withSetup<T>(composable: () => T): [T, any] {
             return () => {}
         }
     })
-    app.use(store).mount(document.createElement('div'))
+    app.use(store).use(pinia).mount(document.createElement('div'))
     return [result!, app]
 }
 
