@@ -1,11 +1,11 @@
 <template>
-  <div class="border p-4 rounded-md">{{text}}</div>
+<h1 class="text-2xl">{{content}}</h1>
 </template>
 
 <script setup lang="ts">
 import {defineProps} from 'vue'
 
 defineProps<{
-  text: string,
+  content: string
 }>()
 </script>

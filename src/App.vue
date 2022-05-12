@@ -1,6 +1,6 @@
 <template>
   <main class="p-4">
-    <Home />
+    <Home class="mb-8" />
     <Messages />
   </main>
 </template>

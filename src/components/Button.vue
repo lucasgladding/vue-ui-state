@@ -3,10 +3,9 @@
 </template>
 
 <script setup lang="ts">
-import {defineEmits, defineProps} from 'vue';
+import {defineEmits, defineProps} from 'vue'
 
 const emit = defineEmits<{
-  // eslint-disable-next-line no-unused-vars
   (event: 'click'): void
 }>()
 

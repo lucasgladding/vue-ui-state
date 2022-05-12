@@ -1,18 +1,15 @@
 <template>
-  <div>
-    <h1 class="text-2xl">Home</h1>
-    <Layout>
-      <Button @click="success('success')" label="SUCCESS" />
-      <Button @click="error('error')" label="ERROR" />
-      <Button @click="clear()" label="CLEAR" />
-    </Layout>
-  </div>
+  <Layout>
+    <Button @click="success('success')" label="SUCCESS" />
+    <Button @click="error('error')" label="ERROR" />
+    <Button @click="clear()" label="CLEAR" />
+  </Layout>
 </template>
 
 <script setup lang="ts">
-import {useErrorState} from '@/composables/useErrorState';
-import Button from '@/components/Button.vue';
-import Layout from '@/components/Layout.vue'
+import {useErrorState} from '@/composables/useErrorState'
+import Button from '@/components/Button'
+import Layout from '@/components/Layout'
 
 const {success, error, clear} = useErrorState()
 </script>

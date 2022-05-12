@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Messages</h1>
+    <Text content="Messages" />
     <TransitionGroup name="messages" tag="ul">
       <li v-for="message in messages" :key="message.id">
         <Message :text="message.text" class="my-2" />
@@ -12,6 +12,7 @@
 <script setup lang="ts">
 import {useErrorState} from '@/composables/useErrorState';
 import Message from '@/components/Message'
+import Text from '@/components/Text'
 
 const {messages} = useErrorState()
 </script>
