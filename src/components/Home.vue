@@ -2,7 +2,6 @@
   <Layout>
     <Button @click="success('success')" label="SUCCESS" />
     <Button @click="error('error')" label="ERROR" />
-    <Button @click="clear()" label="CLEAR" />
   </Layout>
 </template>
 

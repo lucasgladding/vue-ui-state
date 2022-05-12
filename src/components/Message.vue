@@ -1,5 +1,5 @@
 <template>
-  <div class="border flex rounded-md">
+  <div class="border border-black flex overflow-clip rounded-md">
     <div @click="emit('remove')" class="bg-black cursor-pointer p-4 text-white">REMOVE</div>
     <div class="p-4">{{text}}</div>
   </div>
