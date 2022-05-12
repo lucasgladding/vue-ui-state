@@ -3,14 +3,15 @@
     <h1>Messages</h1>
     <TransitionGroup name="messages" tag="ul">
       <li v-for="message in messages" :key="message.id">
-        <p>{{message.text}}</p>
+        <Message :text="message.text" class="my-2" />
       </li>
     </TransitionGroup>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {useErrorState} from '@/composables/useErrorState';
+import Message from '@/components/Message'
 
 const {messages} = useErrorState()
 </script>

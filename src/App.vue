@@ -1,6 +1,8 @@
 <template>
-  <Home />
-  <Messages />
+  <main class="p-4">
+    <Home />
+    <Messages />
+  </main>
 </template>
 
 <script setup>
