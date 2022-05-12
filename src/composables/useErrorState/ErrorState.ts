@@ -1,8 +1,9 @@
 import {Ref} from 'vue';
 
 export enum MessageType {
-    Success,
-    Error,
+    Basic = 'basic',
+    Error = 'error',
+    Success = 'success',
 }
 
 export type Message = {

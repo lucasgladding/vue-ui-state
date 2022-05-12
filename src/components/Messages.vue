@@ -3,7 +3,7 @@
     <Button @click="clear()" label="CLEAR" />
     <TransitionGroup name="messages" tag="ul" class="border-t border-black mt-2">
       <li v-for="message in messages" :key="message.id">
-        <Message :text="message.text" @remove="remove(message.id)" class="my-2" />
+        <Message :text="message.text" :type="message.type" @remove="remove(message.id)" class="my-2" />
       </li>
     </TransitionGroup>
   </div>

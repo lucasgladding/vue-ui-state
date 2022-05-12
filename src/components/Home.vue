@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <Button @click="create('basic')" label="BASIC" />
     <Button @click="create('success', MessageType.Success)" label="SUCCESS" />
     <Button @click="create('error', MessageType.Error)" label="ERROR" />
   </Layout>

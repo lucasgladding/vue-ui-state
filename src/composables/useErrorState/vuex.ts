@@ -7,7 +7,7 @@ export const useErrorState: () => ErrorState = () => {
 
     const messages = computed(() => store.state.errors.messages)
 
-    const create = async (text: string, type: MessageType = MessageType.Success) => {
+    const create = async (text: string, type: MessageType = MessageType.Basic) => {
         await store.dispatch('append', {
             id: Math.random().toString(),
             text,

@@ -1,18 +1,48 @@
 <template>
-  <div class="border border-black flex overflow-clip rounded-md">
-    <div @click="emit('remove')" class="bg-black cursor-pointer p-4 text-white">REMOVE</div>
-    <div class="p-4">{{text}}</div>
+  <div :class="[classes.container, 'flex overflow-clip rounded-md']">
+    <div @click="emit('remove')" :class="[classes.button, 'cursor-pointer p-4']">REMOVE</div>
+    <div :class="[classes.content, 'flex-1 p-4']">{{text}}</div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {defineEmits, defineProps} from 'vue'
+import {computed, defineEmits, defineProps} from 'vue'
+import {MessageType} from '@/composables/useErrorState'
+
+type Colors = {
+  container: string,
+  button: string,
+  content: string,
+}
+
+const theme: Record<string, Colors> = {
+  [MessageType.Basic]: {
+    container: 'border-2 border-black',
+    button: 'bg-black text-white',
+    content: '',
+  },
+  [MessageType.Error]: {
+    container: 'border-2 border-red-500',
+    button: 'bg-red-500 text-white',
+    content: 'bg-red-400 text-white',
+  },
+  [MessageType.Success]: {
+    container: 'border-2 border-green-500',
+    button: 'bg-green-500 text-white',
+    content: 'bg-green-400 text-white',
+  },
+}
 
 const emit = defineEmits<{
   (event: 'remove'): void
 }>()
 
-defineProps<{
+const props = defineProps<{
   text: string,
+  type?: MessageType
 }>()
+
+const classes = computed<Colors>(() => {
+  return theme[props.type] ?? theme[MessageType.Basic]
+})
 </script>
