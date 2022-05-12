@@ -1,14 +1,14 @@
 <template>
   <Layout>
-    <Button @click="success('success')" label="SUCCESS" />
-    <Button @click="error('error')" label="ERROR" />
+    <Button @click="create('success', MessageType.Success)" label="SUCCESS" />
+    <Button @click="create('error', MessageType.Error)" label="ERROR" />
   </Layout>
 </template>
 
 <script setup lang="ts">
-import {useErrorState} from '@/composables/useErrorState'
+import {MessageType, useErrorState} from '@/composables/useErrorState'
 import Button from '@/components/Button'
 import Layout from '@/components/Layout'
 
-const {success, error, clear} = useErrorState()
+const {create, clear} = useErrorState()
 </script>

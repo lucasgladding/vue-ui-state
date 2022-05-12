@@ -7,19 +7,11 @@ export const useErrorState: () => ErrorState = () => {
 
     const messages = computed(() => store.messages)
 
-    const success = async (text: string) => {
+    const create = async (text: string, type: MessageType = MessageType.Success) => {
         await store.append({
             id: Math.random().toString(),
             text,
-            type: MessageType.Success,
-        })
-    }
-
-    const error = async (text: string) => {
-        await store.append({
-            id: Math.random().toString(),
-            text,
-            type: MessageType.Error,
+            type,
         })
     }
 
@@ -33,8 +25,7 @@ export const useErrorState: () => ErrorState = () => {
 
     return {
         messages,
-        success,
-        error,
+        create,
         clear,
         remove,
     }
