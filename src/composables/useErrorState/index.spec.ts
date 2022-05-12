@@ -44,4 +44,13 @@ describe.each(cases)('useErrorState using %s store', (name, composable) => {
         await result.error(text)
         expect(result.messages.value).toHaveLength(1)
     })
+
+    it('can remove messages', async () => {
+        const text = 'message text'
+        await result.success(text)
+        expect(result.messages.value).toHaveLength(1)
+        const id = result.messages.value[0].id
+        await result.remove(id)
+        expect(result.messages.value).toHaveLength(0)
+    })
 })

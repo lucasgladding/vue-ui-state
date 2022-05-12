@@ -1,5 +1,5 @@
 <template>
-<h1 class="text-2xl">{{content}}</h1>
+  <div class="text-2xl">{{content}}</div>
 </template>
 
 <script setup lang="ts">

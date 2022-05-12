@@ -27,10 +27,15 @@ export const useErrorState: () => ErrorState = () => {
         await store.clear()
     }
 
+    const remove = async (id: string) => {
+        await store.remove(id)
+    }
+
     return {
         messages,
         success,
         error,
         clear,
+        remove,
     }
 }

@@ -3,18 +3,18 @@
     <Text content="Messages" />
     <TransitionGroup name="messages" tag="ul">
       <li v-for="message in messages" :key="message.id">
-        <Message :text="message.text" class="my-2" />
+        <Message :text="message.text" @remove="remove(message.id)" class="my-2" />
       </li>
     </TransitionGroup>
   </div>
 </template>
 
 <script setup lang="ts">
-import {useErrorState} from '@/composables/useErrorState';
 import Message from '@/components/Message'
 import Text from '@/components/Text'
+import {useErrorState} from '@/composables/useErrorState';
 
-const {messages} = useErrorState()
+const {messages, remove} = useErrorState()
 </script>
 
 <style scoped>

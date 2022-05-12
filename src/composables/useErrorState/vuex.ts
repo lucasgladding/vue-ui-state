@@ -27,10 +27,15 @@ export const useErrorState: () => ErrorState = () => {
         await store.dispatch('clear')
     }
 
+    const remove = async (id: string) => {
+        await store.dispatch('remove', id)
+    }
+
     return {
         messages,
         success,
         error,
         clear,
+        remove,
     }
 }

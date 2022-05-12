@@ -15,7 +15,10 @@ export const errors: Module<State, any> = {
         },
         clear(state: State) {
             state.messages = []
-        }
+        },
+        remove(state: State, id: string) {
+            state.messages = state.messages.filter(message => message.id !== id)
+        },
     },
     actions: {
         append({commit}, message: Message) {
@@ -23,6 +26,9 @@ export const errors: Module<State, any> = {
         },
         clear({commit}) {
             commit('clear')
-        }
+        },
+        remove({commit}, id: string) {
+            commit('remove', id)
+        },
     }
 }

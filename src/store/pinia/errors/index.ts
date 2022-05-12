@@ -8,6 +8,7 @@ type State = {
 interface Actions {
     append(message: Message): Promise<void>
     clear(): Promise<void>
+    remove(id: string): Promise<void>
 }
 
 export const useErrorsStore = defineStore<'errors', State, {}, Actions>('errors', {
@@ -22,6 +23,9 @@ export const useErrorsStore = defineStore<'errors', State, {}, Actions>('errors'
         },
         async clear() {
             this.messages = []
-        }
+        },
+        async remove(id: string) {
+            this.messages = this.messages.filter(message => message.id !== id)
+        },
     }
 })

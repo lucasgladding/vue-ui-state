@@ -16,4 +16,5 @@ export interface ErrorState {
     success: (text: string) => Promise<void>
     error: (text: string) => Promise<void>
     clear: () => Promise<void>
+    remove: (id: string) => Promise<void>
 }
