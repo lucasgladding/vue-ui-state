@@ -1,12 +1,17 @@
 <template>
   <div :class="[classes.container, 'flex overflow-clip rounded-md']">
-    <div @click="emit('remove')" :class="[classes.button, 'cursor-pointer p-4']">REMOVE</div>
-    <div :class="[classes.content, 'flex-1 p-4']">{{text}}</div>
+    <div @click="emit('remove')" :class="[classes.button, 'cursor-pointer p-4']">
+      <XCircleIcon class="w-10" />
+    </div>
+    <div :class="[classes.content, 'flex flex-1 items-center p-4']">
+      {{text}}
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import {computed, defineEmits, defineProps} from 'vue'
+import {XCircleIcon} from '@heroicons/vue/solid'
 import {MessageType} from '@/composables/useErrorState'
 
 type Colors = {

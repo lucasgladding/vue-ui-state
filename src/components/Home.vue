@@ -1,8 +1,8 @@
 <template>
   <Layout>
-    <Button @click="create('basic')" label="BASIC" />
-    <Button @click="create('success', MessageType.Success)" label="SUCCESS" />
-    <Button @click="create('error', MessageType.Error)" label="ERROR" />
+    <Button @click="create(message)" label="BASIC" />
+    <Button @click="create(message, MessageType.Success)" label="SUCCESS" />
+    <Button @click="create(message, MessageType.Error)" label="ERROR" />
   </Layout>
 </template>
 
@@ -12,4 +12,6 @@ import Button from '@/components/Button'
 import Layout from '@/components/Layout'
 
 const {create, clear} = useErrorState()
+
+const message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel nunc condimentum, dapibus nibh eu, euismod risus.'
 </script>
