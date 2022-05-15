@@ -1,5 +1,10 @@
 <template>
-  <button @click="emit('click')" class="bg-black border p-4 rounded-md text-white">{{label}}</button>
+  <button
+    class="bg-black border p-4 rounded-md text-white"
+    @click="emit('click')"
+  >
+    {{ label }}
+  </button>
 </template>
 
 <script setup lang="ts">

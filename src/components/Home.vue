@@ -1,8 +1,17 @@
 <template>
   <Layout>
-    <Button @click="create(message)" label="BASIC" />
-    <Button @click="create(message, MessageType.Success)" label="SUCCESS" />
-    <Button @click="create(message, MessageType.Error)" label="ERROR" />
+    <Button
+      label="BASIC"
+      @click="create(message)"
+    />
+    <Button
+      label="SUCCESS"
+      @click="create(message, MessageType.Success)"
+    />
+    <Button
+      label="ERROR"
+      @click="create(message, MessageType.Error)"
+    />
   </Layout>
 </template>
 

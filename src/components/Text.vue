@@ -1,5 +1,7 @@
 <template>
-  <div class="text-2xl">{{content}}</div>
+  <div class="text-2xl">
+    {{ content }}
+  </div>
 </template>
 
 <script setup lang="ts">

@@ -1,9 +1,24 @@
 <template>
   <div>
-    <Button @click="clear()" label="CLEAR" />
-    <TransitionGroup name="messages" tag="ul" class="border-t border-black mt-2">
-      <li v-for="message in messages" :key="message.id">
-        <Message :text="message.text" :type="message.type" @remove="remove(message.id)" class="my-2" />
+    <Button
+      label="CLEAR"
+      @click="clear()"
+    />
+    <TransitionGroup
+      name="messages"
+      tag="ul"
+      class="border-t border-black mt-2"
+    >
+      <li
+        v-for="message in messages"
+        :key="message.id"
+      >
+        <Message
+          :text="message.text"
+          :type="message.type"
+          class="my-2"
+          @remove="remove(message.id)"
+        />
       </li>
     </TransitionGroup>
   </div>
@@ -12,7 +27,7 @@
 <script setup lang="ts">
 import Button from '@/components/Button'
 import Message from '@/components/Message'
-import {useErrorState} from '@/composables/useErrorState';
+import {useErrorState} from '@/composables/useErrorState'
 
 const {messages, clear, remove} = useErrorState()
 </script>

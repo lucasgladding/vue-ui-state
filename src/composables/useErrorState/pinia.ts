@@ -1,6 +1,6 @@
-import {computed} from 'vue';
-import {useErrorsStore} from '@/store/errors/pinia';
-import {ErrorState, MessageType} from './ErrorState';
+import {computed} from 'vue'
+import {useErrorsStore} from '@/store/errors/pinia'
+import {ErrorState, MessageType} from './ErrorState'
 
 export const useErrorState: () => ErrorState = () => {
     const store = useErrorsStore()
@@ -11,7 +11,7 @@ export const useErrorState: () => ErrorState = () => {
         await store.append({
             id: Math.random().toString(),
             text,
-            type,
+            type
         })
     }
 
@@ -27,6 +27,6 @@ export const useErrorState: () => ErrorState = () => {
         messages,
         create,
         clear,
-        remove,
+        remove
     }
 }

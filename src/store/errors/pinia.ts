@@ -1,4 +1,4 @@
-import {defineStore} from 'pinia';
+import {defineStore} from 'pinia'
 import {Message} from '@/composables/useErrorState/ErrorState'
 
 type State = {
@@ -14,7 +14,7 @@ interface Actions {
 export const useErrorsStore = defineStore<'errors', State, {}, Actions>('errors', {
     state() {
         return {
-            messages: [],
+            messages: []
         }
     },
     actions: {
@@ -26,6 +26,6 @@ export const useErrorsStore = defineStore<'errors', State, {}, Actions>('errors'
         },
         async remove(id: string) {
             this.messages = this.messages.filter(message => message.id !== id)
-        },
+        }
     }
 })

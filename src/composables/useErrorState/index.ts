@@ -3,5 +3,5 @@ import {useErrorState} from './pinia'
 
 export {
     MessageType,
-    useErrorState,
+    useErrorState
 }

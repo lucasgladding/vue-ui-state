@@ -41,7 +41,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
+      "plugin:vue/vue3-recommended",
       "eslint:recommended",
       "@vue/typescript"
     ],
@@ -49,7 +49,9 @@
       "parser": "@typescript-eslint/parser"
     },
     "rules": {
-      "no-unused-vars": "off"
+      "comma-dangle": ["error", "never"],
+      "no-unused-vars": "off",
+      "semi": ["error", "never"]
     },
     "overrides": [
       {
