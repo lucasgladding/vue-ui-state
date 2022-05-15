@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import {defineEmits, defineProps} from 'vue'
+import { defineEmits, defineProps } from 'vue'
 
 const emit = defineEmits<{
   (event: 'click'): void

@@ -1,5 +1,5 @@
-import {defineStore} from 'pinia'
-import {Message} from '@/composables/useErrorState/ErrorState'
+import { defineStore } from 'pinia'
+import { Message } from '@/composables/useErrorState/ErrorState'
 
 type State = {
     messages: Message[]

@@ -1,8 +1,8 @@
-import {createApp} from 'vue'
-import {pinia, store} from '@/store'
-import {ErrorState} from '@/composables/useErrorState/ErrorState'
-import {useErrorState as useErrorStatePinia} from '@/composables/useErrorState/pinia'
-import {useErrorState as useErrorStateVueX} from '@/composables/useErrorState/vuex'
+import { createApp } from 'vue'
+import { pinia, store } from '@/store'
+import { ErrorState } from '@/composables/useErrorState/ErrorState'
+import { useErrorState as useErrorStatePinia } from '@/composables/useErrorState/pinia'
+import { useErrorState as useErrorStateVueX } from '@/composables/useErrorState/vuex'
 
 function withSetup<T>(composable: () => T): [T, any] {
     let result: T

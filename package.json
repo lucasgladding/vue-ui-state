@@ -51,6 +51,7 @@
     "rules": {
       "comma-dangle": ["error", "never"],
       "no-unused-vars": "off",
+      "object-curly-spacing": ["error", "always"],
       "semi": ["error", "never"]
     },
     "overrides": [

@@ -1,6 +1,6 @@
-import {computed} from 'vue'
-import {useStore} from 'vuex'
-import {ErrorState, MessageType} from '@/composables/useErrorState/ErrorState'
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+import { ErrorState, MessageType } from '@/composables/useErrorState/ErrorState'
 
 export const useErrorState: () => ErrorState = () => {
     const store = useStore()

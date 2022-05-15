@@ -27,9 +27,9 @@
 <script setup lang="ts">
 import Button from '@/components/Button'
 import Message from '@/components/Message'
-import {useErrorState} from '@/composables/useErrorState'
+import { useErrorState } from '@/composables/useErrorState'
 
-const {messages, clear, remove} = useErrorState()
+const { messages, clear, remove } = useErrorState()
 </script>
 
 <style scoped>

@@ -1,6 +1,6 @@
-import {computed} from 'vue'
-import {useErrorsStore} from '@/store/errors/pinia'
-import {ErrorState, MessageType} from '@/composables/useErrorState/ErrorState'
+import { computed } from 'vue'
+import { useErrorsStore } from '@/store/errors/pinia'
+import { ErrorState, MessageType } from '@/composables/useErrorState/ErrorState'
 
 export const useErrorState: () => ErrorState = () => {
     const store = useErrorsStore()

@@ -1,5 +1,5 @@
 import { Module } from 'vuex'
-import {Message} from '@/composables/useErrorState/ErrorState'
+import { Message } from '@/composables/useErrorState/ErrorState'
 
 interface State {
     messages: Message[],
@@ -21,13 +21,13 @@ export const errors: Module<State, any> = {
         }
     },
     actions: {
-        append({commit}, message: Message) {
+        append({ commit }, message: Message) {
             commit('append', message)
         },
-        clear({commit}) {
+        clear({ commit }) {
             commit('clear')
         },
-        remove({commit}, id: string) {
+        remove({ commit }, id: string) {
             commit('remove', id)
         }
     }

@@ -1,6 +1,6 @@
-import {createPinia} from 'pinia'
+import { createPinia } from 'pinia'
 import { createStore } from 'vuex'
-import {errors} from '@/store/errors/vuex'
+import { errors } from '@/store/errors/vuex'
 
 export const pinia = createPinia()
 

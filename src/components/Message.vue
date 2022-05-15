@@ -13,9 +13,9 @@
 </template>
 
 <script setup lang="ts">
-import {computed, defineEmits, defineProps} from 'vue'
-import {XCircleIcon} from '@heroicons/vue/solid'
-import {MessageType} from '@/composables/useErrorState'
+import { computed, defineEmits, defineProps } from 'vue'
+import { XCircleIcon } from '@heroicons/vue/solid'
+import { MessageType } from '@/composables/useErrorState'
 
 type Colors = {
   container: string,

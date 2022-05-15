@@ -16,11 +16,11 @@
 </template>
 
 <script setup lang="ts">
-import {MessageType, useErrorState} from '@/composables/useErrorState'
+import { MessageType, useErrorState } from '@/composables/useErrorState'
 import Button from '@/components/Button'
 import Layout from '@/components/Layout'
 
-const {create, clear} = useErrorState()
+const { create, clear } = useErrorState()
 
 const message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel nunc condimentum, dapibus nibh eu, euismod risus.'
 </script>
