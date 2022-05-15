@@ -16,11 +16,11 @@
 </template>
 
 <script setup lang="ts">
-import { MessageType, useErrorState } from '@/composables/useErrorState'
-import Button from '@/components/Button'
-import Layout from '@/components/Layout'
+import { MessageType, useMessageState } from '@/composables/useMessageState'
+import Button from '@/components/Button.vue'
+import Layout from '@/components/Layout.vue'
 
-const { create, clear } = useErrorState()
+const { create } = useMessageState()
 
 const message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel nunc condimentum, dapibus nibh eu, euismod risus.'
 </script>

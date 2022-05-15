@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import { pinia, store } from '@/store'
-import { ErrorState } from '@/composables/useErrorState/ErrorState'
-import { useErrorState as useErrorStatePinia } from '@/composables/useErrorState/pinia'
-import { useErrorState as useErrorStateVueX } from '@/composables/useErrorState/vuex'
+import { MessageState } from '@/composables/useMessageState/MessageState'
+import { useMessageState as useErrorStatePinia } from '@/composables/useMessageState/pinia'
+import { useMessageState as useErrorStateVueX } from '@/composables/useMessageState/vuex'
 
 function withSetup<T>(composable: () => T): [T, any] {
     let result: T
@@ -19,14 +19,14 @@ function withSetup<T>(composable: () => T): [T, any] {
     return [result!, app]
 }
 
-type Case = [string, () => ErrorState]
+type Case = [string, () => MessageState]
 
 const cases: Case[] = [
     ['pinia', useErrorStatePinia],
     ['vuex', useErrorStateVueX]
 ]
 
-describe.each(cases)('useErrorState using %s store', (name, composable) => {
+describe.each(cases)('useMessageState using %s store', (name, composable) => {
     const [result] = withSetup(() => composable())
 
     afterEach(async () => {

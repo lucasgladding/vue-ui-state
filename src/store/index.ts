@@ -1,11 +1,11 @@
 import { createPinia } from 'pinia'
 import { createStore } from 'vuex'
-import { errors } from '@/store/errors/vuex'
+import { messages } from '@/store/messages/vuex'
 
 export const pinia = createPinia()
 
 export const store = createStore({
   modules: {
-    errors
+    errors: messages
   }
 })

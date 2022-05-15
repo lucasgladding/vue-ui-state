@@ -12,7 +12,7 @@ export type Message = {
     type: MessageType,
 }
 
-export interface ErrorState {
+export interface MessageState {
     messages: Ref<Message[]>
     create: (text: string, type?: MessageType) => Promise<void>
     clear: () => Promise<void>

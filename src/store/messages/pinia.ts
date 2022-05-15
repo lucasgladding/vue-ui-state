@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { Message } from '@/composables/useErrorState/ErrorState'
+import { Message } from '@/composables/useMessageState/MessageState'
 
 type State = {
     messages: Message[]
@@ -11,7 +11,7 @@ interface Actions {
     remove(id: string): Promise<void>
 }
 
-export const useErrorsStore = defineStore<'errors', State, {}, Actions>('errors', {
+export const useMessageStore = defineStore<'errors', State, {}, Actions>('errors', {
     state() {
         return {
             messages: []

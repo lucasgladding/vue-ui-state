@@ -6,8 +6,8 @@
 </template>
 
 <script setup>
-import Home from '@/components/Home'
-import Messages from '@/components/Messages'
+import Home from '@/components/Home.vue'
+import Messages from '@/components/Messages.vue'
 </script>
 
 <style scoped>

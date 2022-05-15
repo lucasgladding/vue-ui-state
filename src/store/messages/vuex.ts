@@ -1,11 +1,11 @@
 import { Module } from 'vuex'
-import { Message } from '@/composables/useErrorState/ErrorState'
+import { Message } from '@/composables/useMessageState/MessageState'
 
 interface State {
     messages: Message[],
 }
 
-export const errors: Module<State, any> = {
+export const messages: Module<State, any> = {
     state: {
         messages: []
     },

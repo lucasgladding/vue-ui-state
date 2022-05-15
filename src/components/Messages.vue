@@ -25,11 +25,11 @@
 </template>
 
 <script setup lang="ts">
-import Button from '@/components/Button'
-import Message from '@/components/Message'
-import { useErrorState } from '@/composables/useErrorState'
+import Button from '@/components/Button.vue'
+import Message from '@/components/Message.vue'
+import { useMessageState } from '@/composables/useMessageState'
 
-const { messages, clear, remove } = useErrorState()
+const { messages, clear, remove } = useMessageState()
 </script>
 
 <style scoped>
