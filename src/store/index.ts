@@ -1,6 +1,6 @@
 import {createPinia} from 'pinia';
 import { createStore } from 'vuex'
-import {errors} from './vuex/errors'
+import {errors} from './errors/vuex'
 
 export const pinia = createPinia()
 

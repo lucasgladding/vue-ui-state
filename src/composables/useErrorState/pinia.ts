@@ -1,5 +1,5 @@
 import {computed} from 'vue';
-import {useErrorsStore} from '@/store/pinia/errors';
+import {useErrorsStore} from '@/store/errors/pinia';
 import {ErrorState, MessageType} from './ErrorState';
 
 export const useErrorState: () => ErrorState = () => {

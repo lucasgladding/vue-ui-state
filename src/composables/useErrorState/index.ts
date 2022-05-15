@@ -1,8 +1,7 @@
 import {MessageType} from './ErrorState'
-// import {useErrorState as pinia} from './pinia'
-import {useErrorState as vuex} from './vuex'
+import {useErrorState} from './pinia'
 
 export {
     MessageType,
-    vuex as useErrorState
+    useErrorState,
 }
